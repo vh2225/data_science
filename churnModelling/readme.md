@@ -1,12 +1,12 @@
 Tableau
 
-part 1:
+part 1: <br />
 Geography <br />
 AB tests <br />
 Looking for Anomalies <br />
 Check the data/approach using a field that we expected to be uniform <br />
 
-part 2:
+part 2: <br />
 Create bins and visualize distribution <br />
 Numeric classification test <br />
 Chi-square test for 2 sample (https://www.evanmiller.org/ab-testing/chi-squared.html) <br />
