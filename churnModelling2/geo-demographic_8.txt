@@ -1,0 +1,29 @@
+﻿Model 8: Logit, using observations 1-10000
+Dependent variable: Exited
+Standard errors based on Hessian
+
+                   coefficient    std. error       z       p-value 
+  -----------------------------------------------------------------
+  const            −3.93393       0.246385      −15.97    2.18e-057 ***
+  CreditScore      −0.000671869   0.000280046    −2.399   0.0164    **
+  Age               0.0758300     0.00274955     27.58    1.98e-167 ***
+  NumOfProducts    −0.121038      0.0471074      −2.569   0.0102    **
+  IsActiveMember   −1.07881       0.0576645     −18.71    4.23e-078 ***
+  Female            0.526299      0.0544270       9.670   4.05e-022 ***
+  Germany           0.808180      0.0629285      12.84    9.44e-038 ***
+  Tenure           −0.0158045     0.00934123     −1.692   0.0907    *
+  WealthAccum       7.07501e-05   1.94600e-05     3.636   0.0003    ***
+
+Mean dependent var   0.203700   S.D. dependent var   0.402769
+McFadden R-squared   0.151650   Adjusted R-squared   0.149869
+Log-likelihood      −4288.318   Akaike criterion     8594.635
+Schwarz criterion    8659.528   Hannan-Quinn         8616.601
+
+Number of cases 'correctly predicted' = 8121 (81.2%)
+f(beta'x) at mean of independent vars = 0.135
+Likelihood ratio test: Chi-square(8) = 1533.15 [0.0000]
+
+           Predicted
+               0      1
+  Actual 0  7685    278
+         1  1601    436

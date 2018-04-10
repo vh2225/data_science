@@ -1,0 +1,49 @@
+# Log started 2018-04-09 18:04
+# Record of session commands.  Please note that this will
+# likely require editing if it is to be run as a script.
+open \
+  C:\Users\Chuanxi\Documents\git\data_science\data_science\churnModelling2\Churn-Modelling.csv
+dummify Gender
+dummify Geography
+rename 17 France
+rename 18 Spain
+rename 19 Germany
+rename 15 Female
+rename 16 Male
+# model 1
+logit Exited 0 CreditScore Age Tenure Balance NumOfProducts HasCrCard \
+  IsActiveMember EstimatedSalary Female Spain Germany --p-values
+# model 2
+logit Exited 0 CreditScore Age Tenure Balance NumOfProducts HasCrCard \
+  IsActiveMember EstimatedSalary Female Germany --p-values
+# model 3
+logit Exited 0 CreditScore Age Tenure Balance NumOfProducts \
+  IsActiveMember EstimatedSalary Female Germany --p-values
+# model 4
+logit Exited 0 CreditScore Age Tenure Balance NumOfProducts \
+  IsActiveMember Female Germany --p-values
+# model 5
+logit Exited 0 CreditScore Age Balance NumOfProducts IsActiveMember \
+  Female Germany --p-values
+logs Balance
+delete l_Balance
+Log_Balance = log10(Balance+1)
+# model 6
+logit Exited 0 CreditScore Age NumOfProducts IsActiveMember Female \
+  Germany Tenure Log_Balance --p-values
+WealthAccum = Balance/Age
+# model 7
+logit Exited 0 CreditScore Age NumOfProducts IsActiveMember Female \
+  Germany Tenure Log_Balance WealthAccum --p-values
+vif
+# model 8
+logit Exited 0 CreditScore Age NumOfProducts IsActiveMember Female \
+  Germany Tenure WealthAccum --p-values
+vif
+log_WA=log10(Balance/Age + 1)
+# model 9
+logit Exited 0 CreditScore Age NumOfProducts IsActiveMember Female \
+  Germany Tenure Log_Balance log_WA --p-values
+vif
+corr log_WA WealthAccum Log_Balance Age
+corr log_WA WealthAccum Log_Balance Balance Age

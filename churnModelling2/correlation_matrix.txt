@@ -1,0 +1,15 @@
+Correlation Coefficients, using the observations 1 - 10000
+5% critical value (two-tailed) = 0.0196 for n = 10000
+
+          log_WA     WealthAccum     Log_Balance         Balance
+          1.0000          0.8889          0.9984          0.9418 log_WA
+                          1.0000          0.8651          0.9255 WealthAccum
+                                          1.0000          0.9370 Log_Balance
+                                                          1.0000 Balance
+
+             Age
+         -0.0075 log_WA
+         -0.2463 WealthAccum
+          0.0345 Log_Balance
+          0.0283 Balance
+          1.0000 Age

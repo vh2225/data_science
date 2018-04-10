@@ -1,0 +1,16 @@
+# Log started 2018-04-09 20:29
+# Record of session commands.  Please note that this will
+# likely require editing if it is to be run as a script.
+run \
+  C:\Users\Chuanxi\Documents\git\data_science\data_science\churnModelling2\session.inp
+# model 10
+logit Exited 0 CreditScore Age NumOfProducts IsActiveMember Female \
+  Germany Tenure Log_Balance
+# model 11
+logit Exited 0 CreditScore Age NumOfProducts IsActiveMember Female \
+  Germany Tenure Log_Balance --p-values
+fcast 1 10000 --static
+# model 11
+fcast 1 10000 P_Hat
+# store "C:\Users\Chuanxi\Documents\gretl\Churn-Modelling-forecast.csv"  \
+  RowNumber Exited P_Hat --csv
